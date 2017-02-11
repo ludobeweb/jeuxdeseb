@@ -74,7 +74,7 @@ class PlayerController extends Controller {
         $em->persist($personnage);
         $this->mergeJoueur($personnage, $r, $em);
         $em->flush();
-        return $this->redirectToRoute("switch");
+        return $this->redirectToRoute("stats");
     }
 
     /**

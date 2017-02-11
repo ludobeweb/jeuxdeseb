@@ -6,17 +6,17 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PersonnageType extends AbstractType
+class StatsType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')
-                ->add('race')
-                ->add('classe')
-                ;
+        $builder->add('pv')
+                ->add('mov')
+                ->add('att')
+                ->add('def')        ;
     }
     
     /**
@@ -25,7 +25,7 @@ class PersonnageType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Personnage'
+            'data_class' => 'AppBundle\Entity\Stats'
         ));
     }
 
@@ -34,7 +34,7 @@ class PersonnageType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_personnage';
+        return 'appbundle_stats';
     }
 
 
